@@ -110,5 +110,5 @@ CREATE TABLE Medical_Records.Patient_Discharge_Form
     
     Treatment_Summary VARCHAR(200) NOT NULL,
     Medication_Provided VARCHAR(3) AS (CASE WHEN is_active = 1 THEN 'Yes' ELSE 'No' END) NOT NULL,
-    Discharge_Doctor ENUM('Dr. George Britton', 'Dr. Nathalia Serna', 'Dr. Brianna Britton', 'Dr. Jayden Britton', 'Dr. Call Lightman') NOT NULL
+    Discharge_Doctor ENUM('Dr. FistName LastName', 'Dr. FistName LastName', 'Dr. FistName LastName', 'Dr. FistName LastName', 'Dr. Call Lightman') NOT NULL
 );
