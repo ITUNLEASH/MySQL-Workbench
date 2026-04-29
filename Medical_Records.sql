@@ -41,7 +41,7 @@ CREATE TABLE Medical_Records.Medical_Service
 CREATE TABLE Medical_Records.Patient_Chart
 (
     Medical_Chart_Number INT, -- Changed to FLOAT for precision
-    Hopsital_Name ENUM('Guam Healthcare', 'Healing Hands', 'Loca Linda SDA Hospital', 'Hospital La Carlota', 'Intermountain Health') NOT NULL,
+    Hopsital_Name ENUM('Guam Healthcare', 'Healing Hands', 'Loma Linda SDA Hospital', 'Hospital La Carlota', 'Intermountain Health') NOT NULL,
     PatientID INT PRIMARY KEY,
     First_Name VARCHAR(60) NOT NULL,
     Last_Name VARCHAR(60) NOT NULL,
