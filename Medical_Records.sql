@@ -33,7 +33,7 @@ CREATE TABLE Medical_Records.Medical_Service
     Sponsor_Collab_Status VARCHAR(3) AS (CASE WHEN is_active = 1 THEN 'Yes' ELSE 'No' END),
     
     Finding_Reviews VARCHAR(300) NOT NULL,
-    External_Consultants ENUM('Dr. George Britton', 'Dr. Nathalia Serna', 'Dr. Brianna Britton', 'Dr. Jayden Britton', 'Dr. Call Lightman') NOT NULL,
+    External_Consultants ENUM('Dr. FistName LastName', 'Dr. FistName LastName', 'Dr. FistName LastName', 'Dr. FistName LastName', 'Dr. Call Lightman') NOT NULL,
     Recomendations VARCHAR(300) NOT NULL,
     Lab_Reports VARCHAR(300) NOT NULL
 );
