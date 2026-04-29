@@ -41,7 +41,7 @@ CREATE TABLE Medical_Records.Medical_Service
 CREATE TABLE Medical_Records.Patient_Chart
 (
     Medical_Chart_Number INT, -- Changed to FLOAT for precision
-    Hopsital_Name ENUM('Guam Healthcare', 'Healing Hands', 'Loma Linda SDA Hospital', 'Hospital La Carlota', 'Intermountain Health') NOT NULL,
+    Hospital_Name ENUM('Guam Healthcare', 'Healing Hands', 'Loma Linda SDA Hospital', 'Hospital La Carlota', 'Intermountain Health') NOT NULL,
     PatientID INT PRIMARY KEY,
     First_Name VARCHAR(60) NOT NULL,
     Last_Name VARCHAR(60) NOT NULL,
@@ -77,7 +77,7 @@ CREATE TABLE Medical_Records.Patient_Discharge_Form
     Zip_Code VARCHAR(5) NOT NULL,
     Home_Number VARCHAR(10) NULL,
     Mobile_Number VARCHAR(10) NOT NULL,
-    Hopsital_Name ENUM('Guam Healthcare', 'Healing Hands') NOT NULL,
+    Hospital_Name ENUM('Guam Healthcare', 'Healing Hands') NOT NULL,
     
     -- Corrected: Use DATETIME type with a DEFAULT value
     Discharge_Date DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
