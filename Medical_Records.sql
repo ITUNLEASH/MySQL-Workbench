@@ -33,7 +33,7 @@ CREATE TABLE Medical_Records.Medical_Service
     Sponsor_Collab_Status VARCHAR(3) AS (CASE WHEN is_active = 1 THEN 'Yes' ELSE 'No' END) NOT NULL,
     
     Finding_Reviews VARCHAR(300) NOT NULL,
-    External_Consultants ENUM('Dr. FistName LastName', 'Dr. FistName LastName', 'Dr. FistName LastName', 'Dr. FistName LastName', 'Dr. Call Lightman') NOT NULL,
+    External_Consultants ENUM('Dr. FirstName LastName', 'Dr. FirstName LastName', 'Dr. FirstName LastName', 'Dr. FirstName LastName', 'Dr. Call Lightman') NOT NULL,
     Recomendations VARCHAR(300) NOT NULL,
     Lab_Reports VARCHAR(300) NOT NULL
 );
@@ -110,5 +110,5 @@ CREATE TABLE Medical_Records.Patient_Discharge_Form
     
     Treatment_Summary VARCHAR(200) NOT NULL,
     Medication_Provided VARCHAR(3) AS (CASE WHEN is_active = 1 THEN 'Yes' ELSE 'No' END) NOT NULL,
-    Discharge_Doctor ENUM('Dr. FistName LastName', 'Dr. FistName LastName', 'Dr. FistName LastName', 'Dr. FistName LastName', 'Dr. Call Lightman') NOT NULL
+    Discharge_Doctor ENUM('Dr. FirstName LastName', 'Dr. FirstName LastName', 'Dr. FirstName LastName', 'Dr. FirstName LastName', 'Dr. Call Lightman') NOT NULL
 );
