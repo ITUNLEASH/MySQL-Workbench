@@ -28,9 +28,9 @@ CREATE TABLE Medical_Records.Medical_Service
     Protocol_Development VARCHAR(300) NOT NULL,
     
     -- Generated columns for your statuses
-    Clinical_Trial_Status VARCHAR(3) AS (CASE WHEN is_active = 1 THEN 'Yes' ELSE 'No' END),
-    Safety_Reporting_Status VARCHAR(3) AS (CASE WHEN is_active = 1 THEN 'Yes' ELSE 'No' END),
-    Sponsor_Collab_Status VARCHAR(3) AS (CASE WHEN is_active = 1 THEN 'Yes' ELSE 'No' END),
+    Clinical_Trial_Status VARCHAR(3) AS (CASE WHEN is_active = 1 THEN 'Yes' ELSE 'No' END) NOT NULL,
+    Safety_Reporting_Status VARCHAR(3) AS (CASE WHEN is_active = 1 THEN 'Yes' ELSE 'No' END) NOT NULL,
+    Sponsor_Collab_Status VARCHAR(3) AS (CASE WHEN is_active = 1 THEN 'Yes' ELSE 'No' END) NOT NULL,
     
     Finding_Reviews VARCHAR(300) NOT NULL,
     External_Consultants ENUM('Dr. FistName LastName', 'Dr. FistName LastName', 'Dr. FistName LastName', 'Dr. FistName LastName', 'Dr. Call Lightman') NOT NULL,
@@ -60,8 +60,8 @@ CREATE TABLE Medical_Records.Patient_Chart
     -- Added this column so your generated logic works
     is_active TINYINT(1) DEFAULT 1, 
 
-    Medical_History_Provided VARCHAR(3) AS (CASE WHEN is_active = 1 THEN 'Yes' ELSE 'No' END),
-    Known_Allergies VARCHAR(3) AS (CASE WHEN is_active = 1 THEN 'Yes' ELSE 'No' END),
+    Medical_History_Provided VARCHAR(3) AS (CASE WHEN is_active = 1 THEN 'Yes' ELSE 'No' END) NOT NULL,
+    Known_Allergies VARCHAR(3) AS (CASE WHEN is_active = 1 THEN 'Yes' ELSE 'No' END) NOT NULL,
     Medication_and_Dosages LONGTEXT
 );
 
@@ -86,8 +86,8 @@ CREATE TABLE Medical_Records.Patient_Discharge_Form
     is_active TINYINT(1) DEFAULT 1,
 
     -- Corrected: Generated columns (Note: they cannot be NOT NULL in some MySQL versions)
-    COVID_19_Vaccine VARCHAR(3) AS (CASE WHEN is_active = 1 THEN 'Yes' ELSE 'No' END),
-    Physician_Approval VARCHAR(3) AS (CASE WHEN is_active = 1 THEN 'Yes' ELSE 'No' END),
+    COVID_19_Vaccine VARCHAR(3) AS (CASE WHEN is_active = 1 THEN 'Yes' ELSE 'No' END) NOT NULL,
+    Physician_Approval VARCHAR(3) AS (CASE WHEN is_active = 1 THEN 'Yes' ELSE 'No' END) NOT NULL,
     
     -- Corrected: This must be a Generated Column to use a function like DATE_ADD
     Next_Checkup_Date DATETIME AS (DATE_ADD(Discharge_Date, INTERVAL 7 DAY)),
@@ -109,6 +109,6 @@ CREATE TABLE Medical_Records.Patient_Discharge_Form
         'Patient Wishes (Discharge Against Medical Advice)', 'Administrative/Insurance Reasons') NOT NULL,
     
     Treatment_Summary VARCHAR(200) NOT NULL,
-    Medication_Provided VARCHAR(3) AS (CASE WHEN is_active = 1 THEN 'Yes' ELSE 'No' END),
+    Medication_Provided VARCHAR(3) AS (CASE WHEN is_active = 1 THEN 'Yes' ELSE 'No' END) NOT NULL,
     Discharge_Doctor ENUM('Dr. George Britton', 'Dr. Nathalia Serna', 'Dr. Brianna Britton', 'Dr. Jayden Britton', 'Dr. Call Lightman') NOT NULL
 );
