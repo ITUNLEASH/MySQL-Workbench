@@ -1,6 +1,8 @@
+-- MySQL Query to specify the Database from the list you'll be working on. 
 USE Medical_Records;
 
--- In MySQL, the hierarchy is always database_name.table_name Don't forge the DOT between the database and the table.
+
+-- In MySQL, the hierarchy is always database_name.table_name Don't forget the DOT between the database and the table.
 
 CREATE TABLE Medical_Records.Medical_Invoice
 (
