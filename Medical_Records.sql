@@ -1,5 +1,3 @@
-CREATE DATABASE Medical_Records;
-
 USE Medical_Records;
 
 -- In MySQL, the hierarchy is always database_name.table_name Don't forge the DOT between the database and the table.
